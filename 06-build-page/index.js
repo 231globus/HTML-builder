@@ -35,6 +35,7 @@ async function createBundle() {
   const ws = fs.createWriteStream(path.join(distPath, "style.css"))
   rs.on("end", ()=>{
     ws.write(content)
+    console.log("style.css created successfully")
   })
 }
 
@@ -55,6 +56,7 @@ async function copyAssets(assetsDistPath, assetsPath) {
 }
 
 copyAssets(assetsDistPath, assetsPath)
+console.log("assets copied successfully")
 
 async function buildHtml() {
   let content = ""
@@ -87,6 +89,7 @@ async function buildHtml() {
       content = content.join('')
       const ws = fs.createWriteStream(indexPath)
       ws.write(content)
+      console.log("page created successfully")
     })
   })
 }
