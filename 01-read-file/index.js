@@ -3,6 +3,14 @@ const path = require("path")
 
 const filePath = path.join(__dirname, "text.txt")
 
-const rs = fs.createReadStream(filePath)
+const rs = fs.createReadStream(filePath, "utf-8")
 
-rs.on("data", chunk => console.log(chunk.toString()))
+let contentFile = ''
+
+rs.on("data", chunk => contentFile += chunk)
+
+rs.on("end", () => console.log(contentFile))
+
+rs.on("error", err => {
+  if(err) throw err
+})
