@@ -5,6 +5,4 @@ const filePath = path.join(__dirname, "text.txt")
 
 const rs = fs.createReadStream(filePath)
 
-rs.on("data", function(chunk) {
-  console.log(chunk.toString())
-})
+rs.on("data", chunk => console.log(chunk.toString()))
