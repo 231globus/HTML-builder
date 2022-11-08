@@ -20,7 +20,7 @@ async function readSecretFolders() {
         }
         console.log(
           fileName.slice(0, fileName.length-extName.length) + " - "
-          + extName.slice(1) + " - " + stats.size + " bites"
+          + extName.slice(1) + " - " + stats.size + " bytes"
         )
       })
     }
