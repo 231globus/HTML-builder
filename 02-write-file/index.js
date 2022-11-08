@@ -23,3 +23,7 @@ process.on("exit", ()=>{
   console.log("file.txt created successfully")
 })
 
+process.on("SIGINT", ()=>{
+  console.log("file.txt created successfully")
+  process.exit();
+})
