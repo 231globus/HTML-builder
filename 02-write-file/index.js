@@ -12,15 +12,12 @@ console.log("Write text:")
 stdin.on("data", (data)=>{
 
   if(data.toString().trim()==="exit") {
+    console.log("file.txt created successfully")
     process.exit()
   }
 
   writeStream.write(data)
   
-})
-
-process.on("exit", ()=>{
-  console.log("file.txt created successfully")
 })
 
 process.on("SIGINT", ()=>{
